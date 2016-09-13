@@ -13,5 +13,5 @@ module.exports = function(RED) {
         });
     }
 
-    RED.nodes.registerType("ui_toast", ToastNode);
+    RED.nodes.registerType("legacy_ui_toast", ToastNode);
 };

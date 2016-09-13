@@ -13,24 +13,24 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andrei-tatar/node-red-contrib-ui.git"
+    "url": "https://github.com/sensetecnic/node-red-contrib-ui.git"
   },
   "node-red": {
     "nodes": {
-      "ui_button": "nodes/ui_button.js",
-      "ui_button_row": "nodes/ui_button_row.js",
-      "ui_radio_button": "nodes/ui_radio_button.js",
-      "ui_switch": "nodes/ui_switch.js",
-      "ui_slider": "nodes/ui_slider.js",
-      "ui_numeric": "nodes/ui_numeric.js",
-      "ui_text": "nodes/ui_text.js",
-      "ui_text_input": "nodes/ui_text_input.js",
-      "ui_gauge": "nodes/ui_gauge.js",
-      "ui_chart": "nodes/ui_chart.js",
-      "ui_toast": "nodes/ui_toast.js",
-      "ui_link": "nodes/ui_link.js",
-      "ui_template": "nodes/ui_template.js",
-      "ui_tab": "nodes/ui_tab.js"
+      "legacy_ui_button": "nodes/legacy_ui_button.js",
+      "legacy_ui_button_row": "nodes/legacy_ui_button_row.js",
+      "legacy_ui_radio_button": "nodes/legacy_ui_radio_button.js",
+      "legacy_ui_switch": "nodes/legacy_ui_switch.js",
+      "legacy_ui_slider": "nodes/legacy_ui_slider.js",
+      "legacy_ui_numeric": "nodes/legacy_ui_numeric.js",
+      "legacy_ui_text": "nodes/legacy_ui_text.js",
+      "legacy_ui_text_input": "nodes/legacy_ui_text_input.js",
+      "legacy_ui_gauge": "nodes/legacy_ui_gauge.js",
+      "legacy_ui_chart": "nodes/legacy_ui_chart.js",
+      "legacy_ui_toast": "nodes/legacy_ui_toast.js",
+      "legacy_ui_link": "nodes/legacy_ui_link.js",
+      "legacy_ui_template": "nodes/legacy_ui_template.js",
+      "legacy_ui_tab": "nodes/legacy_ui_tab.js"
     }
   },
   "dependencies": {

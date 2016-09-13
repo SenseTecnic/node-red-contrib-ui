@@ -1,7 +1,7 @@
 module.exports = function(RED) {
     var ui = require('../ui')(RED);
 
-    function RadioButtonNode(config) {
+    function GaugeNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
 
@@ -9,22 +9,26 @@ module.exports = function(RED) {
         if (!tab) return;
 
         var done = ui.add({
-            node: node,
-            tab: tab,
-            group: config.group,
+            node: node, 
+            tab: tab, 
+            group: config.group, 
             control: {
-                type: 'radio-button',
+                type: 'gauge',
+                label: config.name,
                 order: config.order,
-                value: node.id,
-                buttons: config.buttons
+                value: config.min,
+                format: config.format,
+                min: config.min,
+                max: config.max
             },
             beforeSend: function (msg) {
                 msg.topic = config.topic;
-            }
+            },
+            convert: ui.toFloat.bind(this, config)
         });
 
         node.on("close", done);
     }
 
-    RED.nodes.registerType("ui_radio_button", RadioButtonNode);
+    RED.nodes.registerType("legacy_ui_gauge", GaugeNode);
 };

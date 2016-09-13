@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_button_row',{
+    RED.nodes.registerType('legacy_ui_button_row',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             name: {value: ''},
             topic: {value: ''},
             group: {value: ''},
@@ -23,7 +23,7 @@
         },
         inputs:0,
         outputs:1,
-        icon: "ui_button.png",
+        icon: "legacy_ui_button.png",
         paletteLabel: 'button row',
         label: function() { return this.name || 'button row'; },
         
@@ -150,7 +150,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_button_row">
+<script type="text/x-red" data-template-name="legacy_ui_button_row">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -184,7 +184,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_button_row">
+<script type="text/x-red" data-help-name="legacy_ui_button_row">
     <p>Shows a row of round icon buttons on the user interface. Each button has an assigned
     icon and a payload.<br> 
     The icon must be one of (<a href="https://klarsys.github.io/angular-material-icons/" target="_blank">https://klarsys.github.io/angular-material-icons/</a>).<br>
@@ -195,5 +195,5 @@
     An input message with a string payload will toggle the state of that specific button.<br>
     An input message with an object payload (ex: <code>{alarm: true, play: false}</code>) will
     set the states for those buttons (alarm/play) and any other buttons will be left as they were.</p>
-    <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+    <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>

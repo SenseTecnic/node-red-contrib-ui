@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_numeric',{
+    RED.nodes.registerType('legacy_ui_numeric',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             name: {value: 'Numeric'},
             topic: {value: ''},
             group: {value: ''},
@@ -14,13 +14,13 @@
         },
         inputs:1,
         outputs:1,
-        icon: "ui_numeric.png",
+        icon: "legacy_ui_numeric.png",
         paletteLabel: 'numeric',
         label: function() { return this.name || 'numeric'; }
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_numeric">
+<script type="text/x-red" data-template-name="legacy_ui_numeric">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -53,7 +53,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_numeric">
+<script type="text/x-red" data-help-name="legacy_ui_numeric">
     <p>Shows a numeric input on the user interface. The user can change it's value between
     the limits (<b>Min/Max</b>). Each value change will generate a message with the value set
     as <b>payload</b>.<br>
@@ -63,5 +63,5 @@
     The <b>Template</b> field can be used to change the displayed format. For example, a template of <b>{{value}} %</b>
     with a value of <b>23</b> will show <b>23 %</b> on the user interface. The <b>Template</b> field can contain
     HTML to format the output (eg: <code>&amp;deg;</code> will show the degree symbol).</p>
-    <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+    <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>

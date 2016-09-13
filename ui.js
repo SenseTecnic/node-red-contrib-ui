@@ -168,7 +168,7 @@ function join() {
 
 function init(server, app, log, redSettings) {
 	var uiSettings = redSettings.ui || {};
-	settings.path = uiSettings.path || 'ui';
+	settings.path = 'legacy_ui'; //uiSettings.path || 'ui';
 	settings.title = uiSettings.title || 'Node-RED UI';
 	settings.defaultGroupHeader = uiSettings.defaultGroup || 'Default';
 		

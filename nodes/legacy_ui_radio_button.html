@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_radio_button',{
+    RED.nodes.registerType('legacy_ui_radio_button',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             name: {value: ''},
             topic: {value: ''},
             group: {value: ''},
@@ -122,7 +122,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_radio_button">
+<script type="text/x-red" data-template-name="legacy_ui_radio_button">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -151,11 +151,11 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_radio_button">
+<script type="text/x-red" data-help-name="legacy_ui_radio_button">
     <p>Shows a row of radio buttons on the user interface. The label corresponds to the name of the button.<br>
     The specific payload is sent in a message once a radio button is selected. <br>
     If a topic is specified, it will be appended to the message.</p> <br>
     You can also set the input from Node-RED by sending the corresponding payload as a string.
     <br>
-    <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+    <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>

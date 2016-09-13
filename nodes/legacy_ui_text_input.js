@@ -1,7 +1,7 @@
 module.exports = function(RED) {
     var ui = require('../ui')(RED);
 
-    function NumericNode(config) {
+    function TextInputNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
 
@@ -9,26 +9,24 @@ module.exports = function(RED) {
         if (!tab) return;
 
         var done = ui.add({
-            node: node, 
-            tab: tab, 
-            group: config.group, 
+            node: node,
+            tab: tab,
+            group: config.group,
             control: {
-                type: 'numeric',
+                type: 'text-input',
                 label: config.name,
+                mode:  config.mode,
+                delay: config.delay,
                 order: config.order,
-                format: config.format,
-                value: config.min,
-                min: config.min,
-                max: config.max,
+                value: ''
             },
             beforeSend: function (msg) {
                 msg.topic = config.topic;
             },
-            convert: ui.toNumber.bind(this, config)
         });
 
         node.on("close", done);
     }
 
-    RED.nodes.registerType("ui_numeric", NumericNode);
+    RED.nodes.registerType("legacy_ui_text_input", TextInputNode);
 };

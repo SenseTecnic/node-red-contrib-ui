@@ -44,5 +44,5 @@ module.exports = function(RED) {
         node.on("close", done);
     }
 
-    RED.nodes.registerType("ui_button_row", ButtonRowNode);
+    RED.nodes.registerType("legacy_ui_button_row", ButtonRowNode);
 };

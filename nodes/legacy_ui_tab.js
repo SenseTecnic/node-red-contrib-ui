@@ -9,5 +9,5 @@ module.exports = function(RED) {
         };
     }
 
-    RED.nodes.registerType("ui_tab", TabNode);
+    RED.nodes.registerType("legacy_ui_tab", TabNode);
 };

@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_text_input',{
+    RED.nodes.registerType('legacy_ui_text_input',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             mode: {value: 'text', required: true},
             delay: {value: 300, validate: RED.validators.number()},
             name: {value: ''},
@@ -13,13 +13,13 @@
         },
         inputs:1,
         outputs:1,
-        icon: "ui_text.png",
+        icon: "legacy_ui_text.png",
         paletteLabel: 'text input',
         label: function() { return this.name || 'text input'; }
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_text_input">
+<script type="text/x-red" data-template-name="legacy_ui_text_input">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -50,11 +50,11 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_text_input">
+<script type="text/x-red" data-help-name="legacy_ui_text_input">
   <p>Shows a text input field on the user interface. Mode can be regular text, email or color.
   The email mode will color in red if it is not a valid address and will return undefined.
   The delay sets the amount of time in milliseconds before the output is sent.
   Text written by the user is sent in realtime as the <b>payload</b>. You can also
   set the text of the input field by sending in a <b>payload</b>.
-  <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+  <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>

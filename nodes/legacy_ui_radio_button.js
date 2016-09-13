@@ -1,7 +1,7 @@
 module.exports = function(RED) {
     var ui = require('../ui')(RED);
 
-    function TextInputNode(config) {
+    function RadioButtonNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
 
@@ -13,20 +13,18 @@ module.exports = function(RED) {
             tab: tab,
             group: config.group,
             control: {
-                type: 'text-input',
-                label: config.name,
-                mode:  config.mode,
-                delay: config.delay,
+                type: 'radio-button',
                 order: config.order,
-                value: ''
+                value: node.id,
+                buttons: config.buttons
             },
             beforeSend: function (msg) {
                 msg.topic = config.topic;
-            },
+            }
         });
 
         node.on("close", done);
     }
 
-    RED.nodes.registerType("ui_text_input", TextInputNode);
+    RED.nodes.registerType("legacy_ui_radio_button", RadioButtonNode);
 };

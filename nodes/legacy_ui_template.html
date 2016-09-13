@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_template',{
+    RED.nodes.registerType('legacy_ui_template',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             name: {value: ''},
             group: {value: ''},
             order: {value: 1, validate: RED.validators.number()},
@@ -13,7 +13,7 @@
         },
         inputs:1,
         outputs:1,
-        icon: "ui_template.png",
+        icon: "legacy_ui_template.png",
         paletteLabel: 'template',
         label: function() { return this.name || 'template'; },
         oneditprepare: function() {
@@ -59,7 +59,7 @@
 
             RED.library.create({
                 url:"uitemplates", // where to get the data from
-                type:"ui_template", // the type of object the library is for
+                type:"legacy_ui_template", // the type of object the library is for
                 editor:this.editor, // the field name the main text body goes to
                 mode:"ace/mode/html",
                 fields:['name']
@@ -83,7 +83,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_template">
+<script type="text/x-red" data-template-name="legacy_ui_template">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -117,7 +117,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_template">
+<script type="text/x-red" data-help-name="legacy_ui_template">
     <p>The Template can contain any valid html and angular/angular-material directives.<br>
     You can use this node to create a dynamic user interface element that changes it's appearence based on the input message and can send back messages to Node-RED.<br>
     <br>
@@ -136,5 +136,5 @@
 &lt;/md-button&gt;</pre>
     Will display a button that when clicked will send a message with the payload <code>'Hello world'</code>.
     </p>
-    <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+    <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>

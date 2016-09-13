@@ -1,7 +1,7 @@
 module.exports = function(RED) {
     var ui = require('../ui')(RED);
 
-    function TemplateNode(config) {
+    function TextNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
         
@@ -9,14 +9,13 @@ module.exports = function(RED) {
         if (!tab) return;
         
         var done = ui.add({
-            forwardInputMessages: config.fwdInMessages,
-            storeFrontEndInputAsState: config.storeOutMessages,
             emitOnlyNewValues: false,
             node: node, 
             tab: tab, 
             group: config.group, 
             control: {
-                type: 'template',
+                type: 'text',
+                label: config.name,
                 order: config.order,
                 format: config.format
             },
@@ -30,16 +29,11 @@ module.exports = function(RED) {
                 }
                 
                 return { msg: clonedMsg };
-            },
-            beforeSend: function (msg, original) {
-                if (original)
-                    return original.msg;
             }
         });
-       
-         node.on("close", done);
+
+        node.on("close", done);
     }
 
-    RED.nodes.registerType("ui_template", TemplateNode);
-    RED.library.register("uitemplates");
+    RED.nodes.registerType("legacy_ui_text", TextNode);
 };

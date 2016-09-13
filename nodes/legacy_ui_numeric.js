@@ -1,7 +1,7 @@
 module.exports = function(RED) {
     var ui = require('../ui')(RED);
 
-    function GaugeNode(config) {
+    function NumericNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
 
@@ -13,22 +13,22 @@ module.exports = function(RED) {
             tab: tab, 
             group: config.group, 
             control: {
-                type: 'gauge',
+                type: 'numeric',
                 label: config.name,
                 order: config.order,
-                value: config.min,
                 format: config.format,
+                value: config.min,
                 min: config.min,
-                max: config.max
+                max: config.max,
             },
             beforeSend: function (msg) {
                 msg.topic = config.topic;
             },
-            convert: ui.toFloat.bind(this, config)
+            convert: ui.toNumber.bind(this, config)
         });
 
         node.on("close", done);
     }
 
-    RED.nodes.registerType("ui_gauge", GaugeNode);
+    RED.nodes.registerType("legacy_ui_numeric", NumericNode);
 };

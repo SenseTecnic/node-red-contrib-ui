@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_button',{
+    RED.nodes.registerType('legacy_ui_button',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             name: {value: 'Button'},
             payload: {value: ''},
             topic: {value: ''},
@@ -12,13 +12,13 @@
         },
         inputs:0,
         outputs:1,
-        icon: "ui_button.png",
+        icon: "legacy_ui_button.png",
         paletteLabel: 'button',
         label: function() { return this.name || 'button'; }
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_button">
+<script type="text/x-red" data-template-name="legacy_ui_button">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -43,10 +43,10 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_button">
+<script type="text/x-red" data-help-name="legacy_ui_button">
     <p>Shows a button on the user interface. Clicking the button, generates a message 
     with the payload set to be the <b>Payload</b> field. If no payload is specified, 
     the node id is used. The topic field will be appended to the message
     as a <b>topic</b> property.</p>
-    <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+    <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>

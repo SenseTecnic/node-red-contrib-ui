@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_switch',{
+    RED.nodes.registerType('legacy_ui_switch',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             name: {value: 'Switch'},
             topic: {value: ''},
             group: {value: ''},
@@ -13,13 +13,13 @@
         },
         inputs:1,
         outputs:1,
-        icon: "ui_switch.png",
+        icon: "legacy_ui_switch.png",
         paletteLabel: 'switch',
         label: function() { return this.name || 'switch'; }
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_switch">
+<script type="text/x-red" data-template-name="legacy_ui_switch">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -48,9 +48,9 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_switch">
+<script type="text/x-red" data-help-name="legacy_ui_switch">
     <p>Shows a switch on the user interface. Each change in the state of the switch will generate
     a message on the output with the specified <b>on/off</b> value.<br>
     If a topic is specified, it will be appended to the message.</p>
-    <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+    <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>

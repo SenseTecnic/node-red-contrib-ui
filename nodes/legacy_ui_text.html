@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_text',{
+    RED.nodes.registerType('legacy_ui_text',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             name: {value: 'Text'},
             group: {value: ''},
             order: {value: 1, validate: RED.validators.number()},
@@ -12,13 +12,13 @@
         inputs:1,
         outputs:0,
         align: "right",
-        icon: "ui_text.png",
+        icon: "legacy_ui_text.png",
         paletteLabel: 'text',
         label: function() { return this.name || 'text'; }
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_text">
+<script type="text/x-red" data-template-name="legacy_ui_text">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -39,10 +39,10 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_text">
+<script type="text/x-red" data-help-name="legacy_ui_text">
     <p>Will display a non-editable text on the user interface. Each received message will update 
     the text based on the provided <b>Template</b>.<br>
     The <b>Template</b> field can be used to change the displayed format and can contain
     valid HTML (eg: <code>&amp;deg;</code> will show the degree symbol).</p>
-    <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+    <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>

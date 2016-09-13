@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('ui_chart',{
+    RED.nodes.registerType('legacy_ui_chart',{
         category: 'ui',
         color: '#a6bbcf',
         defaults: {
-            tab: {type: 'ui_tab', required: true},
+            tab: {type: 'legacy_ui_tab', required: true},
             name: {value: ''},
             group: {value: ''},
             order: {value: 1, validate: RED.validators.number()},
@@ -15,13 +15,13 @@
         inputs:1,
         outputs:2,
         align: "right",
-        icon: "ui_chart.png",
+        icon: "legacy_ui_chart.png",
         paletteLabel: 'chart',
         label: function() { return this.name || 'chart'; }
     });
 </script>
 
-<script type="text/x-red" data-template-name="ui_chart">
+<script type="text/x-red" data-template-name="legacy_ui_chart">
     <div class="form-row">
         <label for="node-input-tab"><i class="fa fa-table"></i> Tab</label>
         <input type="text" id="node-input-tab">
@@ -62,7 +62,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="ui_chart">
+<script type="text/x-red" data-help-name="legacy_ui_chart">
     <p>Plots the input values on a time based line chart.<br>
     Each input (<code>msg.payload</code>) value will be converted to a number. If the
     conversion fails, the message is ignored.<br>
@@ -71,5 +71,5 @@
     The first ouput contains the chart state that can be persisted if needed. The second output 
     sends a "restore" message that can be used to restore the state of the chart.</p>
 
-    <p>Access the dashboard at <a target="_blank" href="/red/ui/">/red/ui/</a>.</p>
+    <p>Access the dashboard at <a target="_blank" href="/red/legacy_ui/">/red/legacy_ui/</a>.</p>
 </script>
